@@ -43,7 +43,7 @@ var TestBasicComponent = React.createClass({
             ["p", "Bar"],
         ];
     },
-})
+});
 
 describe("no-jsx mixin", function () {
     it("should convert the items returned by renderTree() to React elements", function () {
