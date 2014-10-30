@@ -122,7 +122,7 @@ var items = [{
 var ListItem = React.createClass({
     displayName: "ListItem",
 
-    renderTree: function () {
+    render: function () {
         return React.createElement("li", { className: "ListItem" },
             React.createElement("a", { href: "/items/" + this.props.item.id },
                 this.props.item.name
@@ -140,7 +140,7 @@ var List = React.createClass({
         });
     },
 
-    renderTree: function () {
+    render: function () {
         return React.createElement("ul", { className: "List" },
             this.renderList()
         );
