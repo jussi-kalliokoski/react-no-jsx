@@ -1,23 +1,16 @@
 {
   "name": "react-no-jsx",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A pure JS alternative to JSX",
-  "author": "Jussi Kalliokoski <jussi.kalliokoski@gmail.com>",
   "license": "ISC",
-  "homepage": "https://github.com/jussi-kalliokoski/react-no-jsx",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/jussi-kalliokoski/react-no-jsx"
-  },
+  "repository": "jussi-kalliokoski/react-no-jsx",
+  "author": "Jussi Kalliokoski <jussi.kalliokoski@gmail.com>",
   "keywords": [
     "react",
     "react-component",
     "jsx",
     "dsl"
   ],
-  "bugs": {
-    "url": "https://github.com/jussi-kalliokoski/react-no-jsx/issues"
-  },
   "main": "index.js",
   "files": [
     "compile.js",

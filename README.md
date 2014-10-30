@@ -9,15 +9,15 @@ react-no-jsx is a pure JS DSL to be used instead of JSX. It allows you to define
 
 You can install `react-no-jsx` via npm:
 
-```bash
-$ npm install --save react-no-jsx
+```sh
+npm install --save react-no-jsx
 ```
 
 ## Usage
 
 react-no-jsx provides a mixin that converts your `renderTree` method into a proper React render method. For example:
 
-```javascript
+```js
 var React = require("react");
 var noJsxMixin = require("react-no-jsx/mixin");
 
@@ -64,7 +64,7 @@ React.render(document.body, React.createElement(List, { items: items }));
 
 The same example written in JSX:
 
-```jsx
+```js
 var React = require("react");
 
 var items = [{
@@ -108,7 +108,7 @@ React.render(document.body, <List items={items}>);
 
 Or pure JS:
 
-```javascript
+```js
 var React = require("react");
 
 var items = [{
@@ -152,7 +152,7 @@ React.render(document.body, React.createElement(List, { items: items }));
 
 You can also directly compile a react-no-jsx literal into a virtual DOM tree:
 
-```javascript
+```js
 var compile = require("react-no-jsx/compile");
 var element = ["div", { className: "foo" },
     "bar",
@@ -193,14 +193,14 @@ Development is pretty straightforward, it's all JS and the standard node stuff w
 
 To install dependencies:
 
-```bash
-$ npm install
+```sh
+npm install
 ```
 
 To run the tests:
 
-```bash
-$ npm test
+```sh
+npm test
 ```
 
 Then just make your awesome feature and a PR for it. Don't forget to file an issue first, or start with an empty PR so others can see what you're doing and discuss it so there's a a minimal amount of wasted effort.
