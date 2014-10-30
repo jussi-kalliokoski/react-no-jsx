@@ -1,0 +1,12 @@
+{
+  "extends": "../.jshintrc",
+  "globals": {
+    "expect": true
+  },
+  "predef": [
+    "describe",
+    "it",
+    "beforeEach",
+    "afterEach"
+  ]
+}
