@@ -34,17 +34,32 @@ var TestComponent = React.createClass({
     },
 });
 
-describe("no-jsx mixin", function () {
-    var result;
-    beforeEach(function () {
-        result = React.renderToStaticMarkup(React.createElement(TestComponent, {}));
-    });
+var TestBasicComponent = React.createClass({
+    mixins: [noJsxMixin],
 
+    renderTree: function () {
+        return ["div",
+            ["h1", "Foo"],
+            ["p", "Bar"],
+        ];
+    },
+})
+
+describe("no-jsx mixin", function () {
     it("should convert the items returned by renderTree() to React elements", function () {
+        var result = React.renderToStaticMarkup(React.createElement(TestComponent, {}));
         result.should.equal("<ul class=\"list\">" +
             "<li class=\"list__item\">foo <a href=\"#open\">open</a></li>" +
             "<li class=\"list__item\">5 <a href=\"#open\">open</a></li>" +
             "<li class=\"list__item\">meow <a href=\"#open\">open</a></li>" +
         "</ul>");
+    });
+
+    it("should convert basic definitions to React elements", function () {
+        var result = React.renderToStaticMarkup(React.createElement(TestBasicComponent, {}));
+        result.should.equal("<div>" +
+            "<h1>Foo</h1>" +
+            "<p>Bar</p>" +
+        "</div>");
     });
 });
