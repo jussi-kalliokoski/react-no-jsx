@@ -23,11 +23,11 @@ function compile (item) {
     var props = item[1];
     var children;
 
-    if (props != null && props.constructor === Object) {
-        children = item.slice(2)
+    if ( props != null && props.constructor === Object ) {
+        children = item.slice(2);
     } else {
-        props = {}
-        children = item.slice(1)
+        props = {};
+        children = item.slice(1);
     }
 
     children = compileChildren(children);

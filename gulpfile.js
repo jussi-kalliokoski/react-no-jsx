@@ -16,22 +16,16 @@ var configFiles = [
     "./test/**/*.js",
 ];
 
-function handleError (error) {
-    throw error;
-}
-
 gulp.task("jscs", function () {
     return gulp.src(files.concat(configFiles))
-        .pipe(jscs("./.jscs.json"))
-        .on("error", handleError);
+        .pipe(jscs("./.jscs.json"));
 });
 
 gulp.task("jshint", function () {
     return gulp.src(files.concat(configFiles))
         .pipe(jshint())
         .pipe(jshint.reporter("default"))
-        .pipe(jshint.reporter("fail"))
-        .on("error", handleError);
+        .pipe(jshint.reporter("fail"));
 });
 
 gulp.task("mocha", function (callback) {
