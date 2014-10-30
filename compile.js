@@ -21,7 +21,16 @@ function compileChildren (children) {
 function compile (item) {
     var type = item[0];
     var props = item[1];
-    var children = compileChildren(item.slice(2));
+    var children;
+
+    if (props != null && props.constructor === Object) {
+        children = item.slice(2)
+    } else {
+        props = {}
+        children = item.slice(1)
+    }
+
+    children = compileChildren(children);
 
     return React.createElement.apply(React, [type, props].concat(children));
 }
